@@ -17,16 +17,13 @@
             min-height: 100vh;
         }
 
-        /* Top Music Control Bar */
-        .music-bar {
+        /* Top Bar */
+        .top-bar {
             width: 100%;
             background-color: #2c3e50;
             color: white;
             padding: 12px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             box-sizing: border-box;
             position: sticky;
@@ -34,15 +31,10 @@
             z-index: 1000;
         }
 
-        .music-label {
+        .bar-title {
             font-size: 0.9em;
             font-weight: bold;
             letter-spacing: 0.5px;
-        }
-
-        .top-player {
-            height: 32px;
-            border-radius: 5px;
         }
 
         /* Main Content Container */
@@ -67,23 +59,45 @@
         p {
             color: #7f8c8d;
             font-size: 1.1em;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* YouTube Music Button */
+        .music-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #e63946;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .music-btn:active {
+            background-color: #cb2d3a;
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
 
-    <div class="music-bar">
-        <span class="music-label">🎵 Now Playing: I Can Only Imagine</span>
-        <audio class="top-player" controls>
-            <source src="ICanOnlyImagine.MP3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <div class="top-bar">
+        <span class="bar-title">✨ Welcome to Barbara's Special Website</span>
     </div>
 
     <div class="container">
         <h1>Welcome to Barbara's Page</h1>
-        <p>Use the control bar at the top to play, pause, or adjust the volume of the background music whenever you like.</p>
+        <p>This space is dedicated to Barbara. Click the button below to open and listen to the official music video for her favorite song on YouTube.</p>
+        
+        <a href="http://www.youtube.com/watch?v=BRPGRdbGHSs" target="_blank" class="music-btn">
+            🎵 Play "I Can Only Imagine" on YouTube
+        </a>
     </div>
 
 </body>
