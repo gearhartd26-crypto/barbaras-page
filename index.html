@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbara's Memory Lane</title>
+    <title>Barbara's HTML Page</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Searches the exact same folder for your background file */
-            background-image: url('Bgblue.jpg');
+            /* Changed to lowercase 'b' to match your file exactly */
+            background-image: url('bgblue.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -18,184 +18,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
         }
 
-        /* Fixed Top Video Header */
-        .video-header {
-            width: 100%;
-            max-width: 500px;
-            background-color: #000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            aspect-ratio: 16 / 9;
-        }
-
-        .video-header iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        /* Main Profile Card Container */
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95); /* Semi-transparent white card */
-            padding: 30px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            max-width: 450px;
-            width: 90%;
-            margin-top: 25px; 
-            margin-bottom: 35px;
-            box-sizing: border-box;
-        }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 70px;
-            height: 70px;
-            background-color: #d1e2f3;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
 
         h1 {
-            color: #1a365d;
-            margin: 0;
-            font-size: 1.8em;
-            text-align: left;
-            line-height: 1.2;
+            color: #2c3e50;
         }
 
-        .welcome-text {
-            color: #4a5568;
-            font-size: 1.05em;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        /* Memories Section */
-        .section-title {
-            color: #1a365d;
-            font-size: 1.3em;
-            text-align: left;
-            margin-bottom: 15px;
-            font-weight: bold;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 5px;
-        }
-
-        .grid {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto; /* Allows horizontal scrolling on mobile */
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            scroll-snap-type: x mandatory;
-        }
-
-        /* Memory Item Card Placeholders */
-        .card {
-            flex: 0 0 135px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 8px;
-            box-sizing: border-box;
-            scroll-snap-align: start;
-        }
-
-        .card-photo-box {
-            width: 100%;
-            height: 110px;
-            background-color: #edf2f7;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a0aec0;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .card-title {
-            font-size: 0.85em;
-            font-weight: bold;
-            color: #2d3748;
-            margin: 4px 0;
-            text-align: left;
-        }
-
-        .card-desc {
-            font-size: 0.75em;
-            color: #718096;
-            text-align: left;
-            line-height: 1.3;
+        p {
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
-
-    <div class="video-header">
-        <iframe 
-            src="https://www.youtube.com/embed/BRPGRdbGHSs" 
-            title="YouTube video player" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
-    </div>
-
     <div class="container">
+        <h1>Welcome, Barbara!</h1>
+        <p>This is your brand new interactive HTML page hosted on GitHub Pages.</p>
         
-        <div class="profile-section">
-            <div class="avatar">👩‍🦳</div>
-            <h1>Barbara's<br>Memory Lane</h1>
-        </div>
-
-        <p class="welcome-text">
-            Welcome, Barbara! Press play on the video above to listen to this beautiful song, then enjoy some of our favorite shared memories below.
-        </p>
-
-        <div class="section-title">Our Favorite Memories</div>
-        <div class="grid">
-            
-            <div class="card">
-                <div class="card-photo-box">Photo 1</div>
-                <div class="card-title">Family Reunion</div>
-                <div class="card-desc">Always cherish this day!</div>
-            </div>
-
-            <div class="card">
-                <div class="card-photo-box">Photo 2</div>
-                <div class="card-title">Day at the Park</div>
-                <div class="card-desc">A sunny afternoon stroll.</div>
-            </div>
-
-            <div class="card">
-                <div class="card-photo-box">Photo 3</div>
-                <div class="card-title">Holiday Fun</div>
-                <div class="card-desc">Pure joy together!</div>
-            </div>
-
-        </div>
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/BRPGRdbGHSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-
 </body>
 </html>
