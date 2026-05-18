@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbara's HTML Page</title>
+    <title>Barbara's Memory Lane</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            /* Matches your exact file name: Bgblue.jpg */
+            background-image: url('Bgblue.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #333;
             margin: 0;
             padding: 0;
@@ -17,16 +21,16 @@
             min-height: 100vh;
         }
 
-        /* Fixed Top Video Container */
+        /* Fixed Top Video Header */
         .video-header {
             width: 100%;
-            max-width: 500px; /* Keeps the player looking sharp on mobile and desktop */
+            max-width: 500px;
             background-color: #000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
-            aspect-ratio: 16 / 9; /* Maintains perfect video proportions */
+            aspect-ratio: 16 / 9;
         }
 
         .video-header iframe {
@@ -34,6 +38,17 @@
             height: 100%;
             border: none;
             display: block;
+        }
+
+        /* Main Profile Card Container */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95); /* Semi-transparent white card */
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 90%;
         }
 
         /* Main Content Container */
