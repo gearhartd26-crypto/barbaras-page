@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbara's Web Page</title>
+    <title>David & Barbara</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,33 +22,46 @@
             overflow-x: hidden; 
         }
 
+        /* The marquee is now at the very top of the body, outside the white box */
+        .top-marquee {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 5px;
+        }
+
+        /* Custom text style that continuously shifts colors */
+        .marquee-title {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-align: center;
+            /* Applies a crisp drop shadow so it stands out against the blue background texture */
+            filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.4));
+            white-space: nowrap;
+            
+            /* Connects the text to the color-shifting animation engine below */
+            animation: colorShift 8s infinite alternate linear;
+        }
+
+        /* The color-changing engine: switches smoothly as time ticks */
+        @keyframes colorShift {
+            0% { color: #e94e77; }    /* Vibrant Pink */
+            33% { color: #4a90e2; }   /* Sky Blue */
+            66% { color: #9013fe; }   /* Deep Purple */
+            100% { color: #ff6b6b; }  /* Soft Rose */
+        }
+
         .container {
             text-align: center;
             background: white;
-            padding: 12px 25px 30px 25px;
+            padding: 20px 25px 30px 25px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             max-width: 400px;
             width: 90%; 
             box-sizing: border-box; 
             margin: 10px auto;
-        }
-
-        /* Container for the multi-colored marquee letters */
-        .marquee-title {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 2.2em;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            /* Applies a soft drop shadow directly behind the moving text */
-            filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
-            white-space: nowrap;
-        }
-
-        /* Spacing for the blank space between words */
-        .space {
-            margin: 0 6px;
         }
 
         .video-wrapper {
@@ -108,13 +121,14 @@
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="top-marquee">
         <marquee behavior="scroll" direction="left" scrollamount="5">
-            <h1 class="marquee-title">
-                <span style="color: #e94e77;">B</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">r</span><span style="color: #e94e77;">b</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">r</span><span style="color: #e94e77;">a</span><span style="color: #4a90e2;">'</span><span style="color: #9013fe;">s</span><span class="space"></span><span style="color: #e94e77;">P</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">g</span><span style="color: #e94e77;">e</span>
-            </h1>
+            <h1 class="marquee-title">David & Barbara</h1>
         </marquee>
-        
+    </div>
+
+    <div class="container">
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/STQbxj5M4pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
