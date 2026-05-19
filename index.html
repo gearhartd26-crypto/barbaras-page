@@ -25,7 +25,6 @@
         .container {
             text-align: center;
             background: white;
-            /* Extra snug padding at the top to slide everything upward */
             padding: 12px 25px 30px 25px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -35,22 +34,26 @@
             margin: 10px auto;
         }
 
-        /* Title text styling with custom shadow drop */
-        .page-title {
+        /* Container for the multi-colored marquee letters */
+        .marquee-title {
             margin-top: 0;
             margin-bottom: 12px;
             font-size: 2.2em;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.25));
+            /* Applies a soft drop shadow directly behind the moving text */
+            filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
+            white-space: nowrap;
+        }
+
+        /* Spacing for the blank space between words */
+        .space {
+            margin: 0 6px;
         }
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; 
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -68,7 +71,6 @@
             height: 100%;
         }
 
-        /* Anniversary Timer Section Layout */
         .countdown-section {
             margin-top: 5px;
             background: #f4f7f6;
@@ -107,7 +109,11 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="page-title">Barbara's Page</h1>
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            <h1 class="marquee-title">
+                <span style="color: #e94e77;">B</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">r</span><span style="color: #e94e77;">b</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">r</span><span style="color: #e94e77;">a</span><span style="color: #4a90e2;">'</span><span style="color: #9013fe;">s</span><span class="space"></span><span style="color: #e94e77;">P</span><span style="color: #4a90e2;">a</span><span style="color: #9013fe;">g</span><span style="color: #e94e77;">e</span>
+            </h1>
+        </marquee>
         
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/STQbxj5M4pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -129,10 +135,8 @@
             const now = new Date();
             let currentYear = now.getFullYear();
             
-            // Sets destination date tracker to March 27th
             let anniversaryTarget = new Date(`March 27, ${currentYear} 00:00:00`);
             
-            // Rolls target over to next year if anniversary date already passed
             if (now > anniversaryTarget) {
                 anniversaryTarget = new Date(`March 27, ${currentYear + 1} 00:00:00`);
             }
